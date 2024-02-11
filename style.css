@@ -1,0 +1,96 @@
+*{
+    padding : 0px;
+    margin : 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #0F1035;
+    display: flex;
+    justify-content: center;
+}
+
+.cradle{
+    width: 25rem;
+    height: 50rem;
+}
+
+.cradle .horizontal-line{
+    height: 1.2rem;
+    width: 25rem;
+    background-color: #86A7FC;
+    margin-top: 4rem;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
+.string-ball{
+    height: 16rem;
+    width: 0.1rem;
+    background-color: #86A7FC;
+    position: relative;
+}
+
+div.string-ball::after{
+    content: "";
+    width: 5rem;
+    height: 5rem;;
+    border-radius: 50%;
+    background-color: #86A7FC;
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%,50%);
+} 
+
+.bottom>div:first-of-type {
+    animation: oscillateFirst 2s ease-in infinite;
+    transform-origin: top;
+}
+
+.bottom>div:last-of-type {
+    animation: oscillateLast 2s ease-in 1s infinite;
+    transform-origin: top;
+}
+
+@keyframes oscillateFirst {
+
+    0%{
+        rotate: 0deg;
+    }
+    25% {
+        rotate: 30deg;
+    }
+    50% {
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+
+@keyframes oscillateLast {
+    0% {
+        rotate: 0deg;
+    }25% {
+        rotate: -30deg;
+    }50% {
+        rotate: 0deg;
+    }75% {
+        rotate: 0deg;
+    }
+}
+
+@media screen and (width<750px) {
+    html{
+        font-size: 8px;
+    }
+}
